@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e272e;
+
+}
+h1{
+    color: #1e272e;
+    position: relative;
+    font-size: 10vw;
+    -webkit-text-stroke: 0.4vw #383d52;
+    text-transform: uppercase;
+}
+h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    color: #18dcff;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #18dcff;
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate {
+    0%, 20%,100%{width: 0;}
+    70%, 90%{width: 100%;}
+}
